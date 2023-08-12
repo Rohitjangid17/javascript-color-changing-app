@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Color Changing App</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .canvas {
+            background-color: red;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 2.5rem;
+            width: 60vw;
+            height: 70vh;
+            border-radius: 1rem;
+            margin: 50px auto 50px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 3rem;
+        }
+
+        .button {
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            border: none;
+            font-size: 1.5rem;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canvas">
+        Background color will be change when we hit the button.
+    </div>
+
+    <button class="button" onclick="clickBTN()">Click me!</button>
+
+
+
+    <script defer>
+        const colors = ['red', 'blue', 'green', 'orange', 'purple', 'black', 'yellow'];
+        const button = document.querySelector('.button');
+
+        const clickBTN = () => {
+            const index = parseInt((Math.random() * colors.length) + 1);
+            const canvas = document.querySelector('.canvas');
+            canvas.style.background = `${colors[index]}`;
+        }
+    </script>
+</body>
+
+</html>
